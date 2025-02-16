@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم البرمجة من الصفر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* التنسيقات الأساسية */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        /* تنسيق القائمة العلوية */
+        .main-nav {
+            background-color: #333;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: #ffd700;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* تنسيق محتوى الصفحة */
+        .course-content {
+            margin-top: 70px;
+            padding: 20px;
+        }
+
+        .video-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+
+        /* تنسيق مشغل الفيديو */
+        .main-video-wrapper {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            min-width: 0;
+        }
+
+        .main-video {
+            position: relative;
+            padding-top: 56.25%;
+            background: #000;
+        }
+
+        .main-video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .video-info p {
+            color: #666;
+        }
+
+        /* تنسيق قائمة التشغيل */
+        .playlist-container {
+            width: 400px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .playlist-sections {
+            height: calc(100vh - 120px);
+            overflow-y: auto;
+        }
+
+        .section-header {
+            padding: 15px;
+            background: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section-header h3 {
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .section-videos {
+            display: none;
+        }
+
+        .section.active .section-videos {
+            display: block;
+        }
+
+        .video-item {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+
+        .video-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .video-item.active {
+            background-color: #ffd700;
+        }
+
+        .video-title {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .video-duration {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* تنسيقات للشاشات الصغيرة */
+        @media (max-width: 992px) {
+            .video-container {
+                flex-direction: column;
+            }
+
+            .playlist-container {
+                width: 100%;
+            }
+
+            .playlist-sections {
+                height: auto;
+                max-height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- القائمة العلوية -->
+    <nav class="main-nav">
+        <a href="#" class="logo">منصة التعلم</a>
+    </nav>
+
+    <!-- محتوى الصفحة -->
+    <div class="course-content">
+        <div class="video-container">
+            <!-- مشغل الفيديو -->
+            <div class="main-video-wrapper">
+                <div class="main-video">
+                    <iframe id="mainVideo" 
+                            src="https://www.youtube.com/embed/ZMLz-zmkhoc" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h2 id="currentVideoTitle">تعلم البرمجة من الصفر</h2>
+                    <p id="currentVideoDescription">شرح أساسيات البرمجة والمفاهيم الأساسية</p>
+                </div>
+            </div>
+            
+            <!-- قائمة التشغيل -->
+            <div class="playlist-container">
+                <div class="playlist-sections">
+                    <!-- القسم الأول: المقدمة -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>القسم الأول: المقدمة</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="section-videos">
+                            <div class="video-item active" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">1- مقدمة في البرمجة</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">2- أهمية البرمجة</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">3- لماذا نتعلم البرمجة</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">4- مجالات البرمجة</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- القسم الثاني: أساسيات البرمجة -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>القسم الثاني: أساسيات البرمجة</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="section-videos">
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">5- المتغيرات</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">6- أنواع البيانات</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">7- العمليات الحسابية</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">8- المصفوفات</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- القسم الثالث: جمل التحكم -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>القسم الثالث: جمل التحكم</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="section-videos">
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">9- جمل الشرط</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">10- جمل التكرار</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">11- جملة Switch</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">12- الدوال</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- القسم الرابع: البرمجة كائنية التوجه -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>القسم الرابع: البرمجة كائنية التوجه</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="section-videos">
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">13- مفهوم الكائنات</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">14- الخصائص والطرق</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">15- الوراثة</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">16- تعدد الأشكال</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- القسم الخامس: المشاريع -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>القسم الخامس: المشاريع</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="section-videos">
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">17- المشروع الأول</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">18- المشروع الثاني</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">19- المشروع الثالث</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                            <div class="video-item" data-video="ZMLz-zmkhoc">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">20- المشروع النهائي</span>
+                                <span class="video-duration">9:59</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // التحكم في فتح وغلق الأقسام
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const header = section.querySelector('.section-header');
+                header.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    section.classList.toggle('active');
+                    
+                    // تغيير اتجاه السهم
+                    const icon = header.querySelector('i');
+                    if(section.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+
+            // التحكم في تشغيل الفيديوهات
+            const videoItems = document.querySelectorAll('.video-item');
+            const mainVideo = document.getElementById('mainVideo');
+            const currentVideoTitle = document.getElementById('currentVideoTitle');
+            const currentVideoDescription = document.getElementById('currentVideoDescription');
+
+            videoItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // إزالة الكلاس active من جميع الفيديوهات
+                    videoItems.forEach(v => v.classList.remove('active'));
+                    
+                    // إضافة الكلاس active للفيديو المحدد
+                    item.classList.add('active');
+                    
+                    // تحديث مصدر الفيديو
+                    const videoId = item.getAttribute('data-video');
+                    mainVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    
+                    // تحديث عنوان ووصف الفيديو
+                    currentVideoTitle.textContent = item.querySelector('.video-title').textContent;
+                    currentVideoDescription.textContent = 'شرح ' + item.querySelector('.video-title').textContent;
+                });
+            });
+
+            // تفعيل أول قسم افتراضياً
+            sections[0].classList.add('active');
+        });
+    </script>
+</body>
+</html>
