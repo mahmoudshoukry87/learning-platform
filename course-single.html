@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اسم الكورس - منصة الكورسات</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/course-single.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- القائمة الرئيسية -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">منصة الكورسات</a>
+            </div>
+            
+            <button class="mobile-menu-button" aria-label="القائمة">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+    
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="courses.html">الكورسات</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- قسم مشغل الفيديو -->
+    <div class="course-content">
+        <div class="video-container">
+            
+        <div class="main-video">
+            <iframe 
+                id="mainVideo" 
+                width="100%" 
+                height="100%" 
+                src="https://www.youtube.com/embed/ZMLz-zmkhoc?enablejsapi=1" 
+                title="تعلم البرمجة من الصفر"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+            
+            <div class="playlist-container">
+                <div class="playlist-sections">
+                    <!-- القسم الأول -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>القسم الأول: مقدمة في البرمجة</h3>
+                            <span class="toggle-section"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="section-videos">
+                            <div class="video-item active" 
+                                 data-video="dQw4w9WgXcQ"
+                                 data-title="مقدمة في البرمجة" 
+                                 data-description="شرح أساسيات البرمجة والمفاهيم الأساسية">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">مقدمة في البرمجة</span>
+                                <span class="video-duration">10:30</span>
+                            </div>
+                            <div class="video-item" 
+                                 data-video="dQw4w9WgXcQ"
+                                 data-title="المتغيرات والثوابت" 
+                                 data-description="تعلم كيفية استخدام المتغيرات والثوابت في البرمجة">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">المتغيرات والثوابت</span>
+                                <span class="video-duration">15:45</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- القسم الثاني -->
+                    <div class="section">
+                        <div class="section-header">
+                            <h3>القسم الثاني: هياكل التحكم</h3>
+                            <span class="toggle-section"><i class="fas fa-chevron-down"></i></span>
+                        </div>
+                        <div class="section-videos">
+                            <div class="video-item" 
+                                 data-video="dQw4w9WgXcQ"
+                                 data-title="جمل الشرط" 
+                                 data-description="شرح جمل الشرط وكيفية استخدامها">
+                                <i class="fas fa-play-circle"></i>
+                                <span class="video-title">جمل الشرط</span>
+                                <span class="video-duration">12:20</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/course-single.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
