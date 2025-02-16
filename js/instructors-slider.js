@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const track = document.querySelector('.courses-track');
-    let isDown = false;
+    const track = document.querySelector('.instructors-track');
     let startX;
     let scrollLeft;
+    let isDown = false;
 
-    // تهيئة خصائص السحب
+    // دالة بدء السحب
     function startDragging(e) {
         isDown = true;
         track.classList.add('active');
@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
         scrollLeft = track.scrollLeft;
     }
 
-    // إنهاء السحب
+    // دالة إنهاء السحب
     function stopDragging() {
         isDown = false;
         track.classList.remove('active');
     }
 
-    // التحريك
+    // دالة التحريك
     function move(e) {
         if (!isDown) return;
         e.preventDefault();
@@ -27,13 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
         track.scrollLeft = scrollLeft - walk;
     }
 
-    // أحداث الماوس
+    // إضافة مستمعي أحداث الماوس
     track.addEventListener('mousedown', startDragging);
     track.addEventListener('mousemove', move);
     track.addEventListener('mouseup', stopDragging);
     track.addEventListener('mouseleave', stopDragging);
 
-    // أحداث اللمس
+    // إضافة مستمعي أحداث اللمس
     track.addEventListener('touchstart', startDragging);
     track.addEventListener('touchmove', move);
     track.addEventListener('touchend', stopDragging);
