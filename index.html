@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>عنوان الصفحة</title>
+        <link rel="stylesheet" href="css/common.css">  <!-- إضافة ملف الأنماط المشتركة -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/course-page.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+<body>
+ <!-- القائمة الرئيسية -->
+<nav class="main-nav">
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html">منصة الكورسات</a>
+        </div>
+        
+        <button class="mobile-menu-button" aria-label="القائمة">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="courses.html">الكورسات</a></li>
+            <li><a href="about.html">من نحن</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- قسم السلايد شو -->
+    <header class="hero-slideshow">
+        <div class="slide-container">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1>مرحباً بك في منصتنا التعليمية</h1>
+                    <p>ابدأ رحلة التعلم معنا اليوم</p>
+                    <a href="courses.html" class="cta-button">استعرض الكورسات</a>
+                </div>
+                <div class="slide-bg" style="background-image: url('images/slide1.jpg')"></div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>تعلم من الخبراء</h1>
+                    <p>أفضل المدربين في مجالاتهم</p>
+                    <a href="courses.html" class="cta-button">اكتشف المزيد</a>
+                </div>
+                <div class="slide-bg" style="background-image: url('images/slide2.jpg')"></div>
+            </div>
+            
+            <div class="slide">
+                <div class="slide-content">
+                    <h1>شهادات معتمدة</h1>
+                    <p>احصل على شهادة بعد إتمام كل دورة</p>
+                    <a href="courses.html" class="cta-button">ابدأ الآن</a>
+                </div>
+                <div class="slide-bg" style="background-image: url('images/slide3.jpg')"></div>
+            </div>
+        </div>
+        
+        <!-- أزرار التنقل -->
+        <button class="slide-nav prev" aria-label="السابق">&#10094;</button>
+        <button class="slide-nav next" aria-label="التالي">&#10095;</button>
+        
+        <!-- نقاط التنقل -->
+        <div class="slide-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </header>
+
+    <!-- قسم المميزات -->
+    <section class="features">
+        <h2>لماذا تختار منصتنا؟</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <h3>محتوى عالي الجودة</h3>
+                <p>كورسات معدة بعناية لتناسب جميع المستويات</p>
+            </div>
+            <div class="feature">
+                <h3>تعلم في أي وقت</h3>
+                <p>محتوى متاح على مدار الساعة</p>
+            </div>
+            <div class="feature">
+                <h3>شهادات معتمدة</h3>
+                <p>احصل على شهادة بعد إتمام كل كورس</p>
+            </div>
+        </div>
+    </section>
+    <!-- إضافة قسم من نحن -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>من نحن</h2>
+                <p>نحن منصة تعليمية رائدة نسعى لتوفير أفضل المحتوى التعليمي لطلابنا. نؤمن بأن التعليم حق للجميع، ونعمل على توفير تجربة تعلم فريدة ومميزة.</p>
+                <p>نفخر بتقديم:</p>
+                <ul>
+                    <li>أكثر من 100 دورة تدريبية</li>
+                    <li>خبراء ومدربين معتمدين</li>
+                    <li>شهادات معتمدة</li>
+                    <li>دعم فني على مدار الساعة</li>
+                </ul>
+                <a href="about.html" class="about-cta">اقرأ المزيد</a>
+            </div>
+            <div class="about-image">
+                <img src="images/about-us.jpg" alt="صورة من نحن">
+            </div>
+        </div>
+    </section>
+
+<!-- قسم المحاضرين -->
+<section class="instructors-section">
+    <h2>نخبة من المحاضرين</h2>
+    <div class="instructors-container">
+        <div class="instructors-track">
+            <!-- كل محاضر في بطاقة منفصلة -->
+            <div class="instructor-card">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=Gray&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light" alt="محاضر 1">
+                <h3>د. أحمد محمد</h3>
+                <p>متخصص في علوم الحاسب</p>
+            </div>
+
+            <div class="instructor-card">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairStraight&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerSweater&clotheColor=Black&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light" alt="محاضر 2">
+                <h3>د. سارة أحمد</h3>
+                <p>متخصصة في الذكاء الاصطناعي</p>
+            </div>
+
+            <div class="instructor-card">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairDreads01&accessoriesType=Round&hairColor=Black&facialHairType=BeardMedium&facialHairColor=Black&clotheType=Hoodie&clotheColor=Blue03&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light" alt="محاضر 3">
+                <h3>د. محمد خالد</h3>
+                <p>متخصص في تطوير الويب</p>
+            </div>
+
+            <div class="instructor-card">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=LongHairBob&accessoriesType=Prescription01&hairColor=Brown&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=PastelRed&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light" alt="محاضر 4">
+                <h3>د. نور محمد</h3>
+                <p>متخصصة في علم البيانات</p>
+            </div>
+
+            <div class="instructor-card">
+                <img src="https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortWaved&accessoriesType=Wayfarers&hairColor=Black&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Gray&eyeType=Default&eyebrowType=Default&mouthType=Smile&skinColor=Light" alt="محاضر 5">
+                <h3>د. عمر سامي</h3>
+                <p>متخصص في الأمن السيبراني</p>
+            </div>
+
+            <!-- نسخ إضافية للتكرار السلس -->
+            <!-- نفس البطاقات السابقة تتكرر -->
+        </div>
+    </div>
+</section>
+
+
+<!-- قسم أشهر الكورسات -->
+<section class="popular-courses">
+    <h2>أشهر الكورسات</h2>
+    <div class="courses-slider-container">
+        <div class="courses-track">
+            <!-- كورس 1 -->
+            <div class="course-slide">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop" alt="Web Development">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-tag">برمجة</span>
+                        <h3>تطوير المواقع المتقدم</h3>
+                        <p>تعلم HTML, CSS, JavaScript والمزيد</p>
+                        <div class="course-meta">
+                            <span>12 ساعة</span>
+                            <span>149 طالب</span>
+                        </div>
+                        <a href="#" class="course-btn">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كورس 2 -->
+            <div class="course-slide">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500&h=300&fit=crop" alt="Data Science">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-tag">علم البيانات</span>
+                        <h3>تحليل البيانات الضخمة</h3>
+                        <p>Python, Pandas, وتحليل متقدم</p>
+                        <div class="course-meta">
+                            <span>15 ساعة</span>
+                            <span>203 طالب</span>
+                        </div>
+                        <a href="#" class="course-btn">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كورس 3 -->
+            <div class="course-slide">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop" alt="Cyber Security">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-tag">أمن المعلومات</span>
+                        <h3>الأمن السيبراني الاحترافي</h3>
+                        <p>حماية الأنظمة والشبكات</p>
+                        <div class="course-meta">
+                            <span>20 ساعة</span>
+                            <span>178 طالب</span>
+                        </div>
+                        <a href="#" class="course-btn">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كورس 4 -->
+            <div class="course-slide">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=500&h=300&fit=crop" alt="Mobile Development">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-tag">تطبيقات موبايل</span>
+                        <h3>تطوير تطبيقات الجوال</h3>
+                        <p>React Native & Flutter</p>
+                        <div class="course-meta">
+                            <span>18 ساعة</span>
+                            <span>165 طالب</span>
+                        </div>
+                        <a href="#" class="course-btn">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- كورس 5 -->
+            <div class="course-slide">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&h=300&fit=crop" alt="AI">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-tag">ذكاء اصطناعي</span>
+                        <h3>مقدمة في الذكاء الاصطناعي</h3>
+                        <p>Machine Learning & Deep Learning</p>
+                        <div class="course-meta">
+                            <span>25 ساعة</span>
+                            <span>234 طالب</span>
+                        </div>
+                        <a href="#" class="course-btn">اشترك الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2025</p>
+    </footer>
+
+    <!-- تضمين ملف JavaScript -->
+    <script src="js/slideshow.js"></script>
+    <script src="js/sliders.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
